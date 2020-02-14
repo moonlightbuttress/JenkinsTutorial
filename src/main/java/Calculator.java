@@ -1,7 +1,7 @@
 import java.util.Random;
 
 class Calculator {
-
+//all tests pass 2/14/2020
     Calculator(){
 
     }
@@ -70,7 +70,7 @@ class Calculator {
         Random random = new Random();
         StringBuilder str = new StringBuilder();
         str.append(n);
-        for (int i = 0; i < random.nextInt(10); ++i ){
+        for (int i = 0; i < random.nextInt(100); ++i ){
             char c = (char)(random.nextInt(26) + 'a');
             str.append(c);
         }
