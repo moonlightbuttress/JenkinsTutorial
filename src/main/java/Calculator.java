@@ -73,6 +73,7 @@ class Calculator {
         for (int i = 0; i < random.nextInt(100); ++i ){
             char c = (char)(random.nextInt(26) + 'a');
             str.append(c);
+            str.append(random.nextInt(100));
         }
         return str.toString();
     }
