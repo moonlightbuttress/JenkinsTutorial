@@ -5,7 +5,7 @@ pipeline {
         jdk 'JDK 8'
     }
     environment {
-        registry = "Your_Dockerhub_Username/Your_Dockerhub_Repository_Name"
+        registry = "braydnt/jenkins_tutorial"
         registryCredential = 'dockerhub'
         dockerImage=''
     }
@@ -44,6 +44,21 @@ pipeline {
                 sh 'mvn package'
                 archiveArtifacts artifacts: 'src/**/*.java'
                 archiveArtifacts artifacts: 'target/*.jar'
+            }
+        }
+stage ('Package') {
+            steps {
+                sh 'mvn package'
+                archiveArtifacts artifacts: 'src/**/*.java'
+                archiveArtifacts artifacts: 'target/*.jar'
+            }
+        }
+
+        stage ('Building image') {
+            steps {
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
 
