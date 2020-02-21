@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-        static void main(String[] args) throws IOException {
+        public static void main(String[] args) throws IOException {
                 Calculator calc = new Calculator();
                 InputStreamReader is = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(is);
