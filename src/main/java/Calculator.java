@@ -3,7 +3,7 @@ import java.util.Random;
 class Calculator {
 //all tests pass 2/14/2020
     Calculator(){
-//test
+//test test
     }
 
     int add(int a , int b){
