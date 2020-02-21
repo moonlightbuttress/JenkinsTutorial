@@ -7,7 +7,7 @@ public class Main {
                 Calculator calc = new Calculator();
                 InputStreamReader is = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(is);
-                String input = null;
+                String input = "begin";
                 System.out.println("type exit to exit program");
                 while (!input.equals("exit")) {
 
