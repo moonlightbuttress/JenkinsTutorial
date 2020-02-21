@@ -61,6 +61,27 @@ stage ('Package') {
                 }
             }
         }
-
+stage ('Deploy Image') {
+            steps {
+                script {
+                    docker.withRegistry('', registryCredential) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+stage ('Remove unused docker image') {
+            steps {
+                sh "docker rmi $registry:$BUILD_NUMBER"
+            }
+        }
     }
+    post {
+	failure{
+       	  mail to: ‘tcrbraydn@gmail.com’,
+	  subject: “Failed Pipeline: ${currentBuild.fullDisplayName}”,
+	  body: “Something is wrong with ${env.BUIL_URL}”
+}
+}
+
 }
