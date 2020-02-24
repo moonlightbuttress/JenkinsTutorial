@@ -49,6 +49,7 @@ public class Main {
 //                                System.out.println("invalid input");
 //                        }
 //                }
+            //
             System.out.println("add\n1\n1\n2\nsubtract\n2\n1\n1\nmultiply\n1\n4\n4\ndivide\n5\n10\n2\nfibonacci\n4\n3\nbinary\n8\n1000\n");
         }
 }
